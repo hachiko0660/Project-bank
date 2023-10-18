@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <script>
+        function myfunction(){
+        var body=document.getElementById('body').innerHTML;
+        var data=document.getElementById('data').innerHTML;
+        document.getElementById('body').innerHTML=data;
+           window.print()
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         th, td {
+  border-color: rgb(196, 55, 118);
+}
+
+    </style>
+</head>
+<body id="body" style="background-image:url({% static 'mny.jpeg ' %});background-repeat:no repeat;background-size:cover;">
+<form method="post">{% csrf_token %}
+    <div id="data" >
+    <h2 align="center" style="margin-top:50px;color:white;">Deposit Statement</h2>
+<!--            <h3 style="text-align: center;">successfully withdraw {{ad}} RS from your account {{ac}} </h3>-->
+
+  <table align="center" border="1" solid 2px style="width:600px;background-color: rgb(165, 156, 165);margin-top:50px;">
+    <tr>
+      <th>SI No:</th>
+      <th>Date</th>
+      <th>Deposit Amount</th>
+    </tr>
+     {% for i in x %}
+      {% if i.uid == id %}
+      <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.date}}</td>
+      <td>{{i.amount2}}</td>
+      </tr>
+      {% endif %}
+   {% endfor %}
+  </table>
+         </div>
+           <a href="http://127.0.0.1:8000/bank_app/profile/" style="font-size:15px;color:black;margin-top:200px;">Back to profile</a>
+
+</form>
+<button onclick="myfunction()">Print Deposit Page</button>
+</body>
+</html>

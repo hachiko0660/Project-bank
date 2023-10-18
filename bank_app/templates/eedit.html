@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+    <div style="height:150px;width:350px;background-color: rgb(245, 243, 241);border-style: solid;border-color:grey;align:center;">
+        <img src="{% static 'bnk2.jpeg' %}" style="height:70px;width:60px;float:left;">
+        <label>Title</label>
+        <input type="text" name="title"  value="{{a.title}}"><br><br>
+        <label>Content</label>
+        <input type="textarea" name="content" style="text-align:justify;" value="{{a.content}}"><br><br>
+         <button>Edit</button>
+    </div>
+
+</form>
+
+</body>
+</html>

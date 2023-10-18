@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+              body{background-color:darkgoldenrod;
+background-image: linear-gradient(90deg, transparent 50%,
+  rgba(255,255,255,.5) 50% 50%);
+background-size: 50px 25px; }
+
+
+    </style>
+</head>
+<body>
+
+<div align="center" >
+<form method="post" align="center" >{% csrf_token %}
+<h2><u>Edit Data</u></h2>
+    <table align="center">
+        <tr>
+            <td><label>First Name</label></td>
+            <td><input type="text" name="fname" value="{{a.fname}}" ></td>
+        </tr>
+        <tr>
+            <td><label>Last Name</label></td>
+            <td><input type="text" name="lname" value="{{a.lname}}"></td>
+            <tr>
+<td><label>Phone Number</label></td>
+<td><input type="number" name="phn" value="{{a.phn}}"></td>
+    </tr>
+        <tr>
+            <td><label>Email id</label></td>
+<td><input type="email" name="email" value="{{a.email}}"></td>
+            <tr>
+        <td><label>Username</label></td>
+        <td><input type="text" name="uname" value="{{a.uname}}"></td>
+    </tr>
+    </table>
+<input type="submit">
+</form>
+</div>
+
+</body>
+</html>

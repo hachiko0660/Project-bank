@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+
+<div hieght="60px" width="200px" style="background-color:yellow;">
+    <h3>your account number:{{ac}}</h3>
+    <h3>your current balance:{{bal}}</h3>
+
+ </div>
+         <a href="http://127.0.0.1:8000/bank_app/profile/" style="font-size:15px;color:green;">Back to profile</a>
+
+</form>
+</body>
+</html>

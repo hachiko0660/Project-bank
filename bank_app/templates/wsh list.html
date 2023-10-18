@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+    <h3>Wish list</h3>
+    {% for i in a %}
+
+ <div style="height:200px;width:350px;background-color: rgb(245, 243, 241);border-style: solid;border-color:grey;align:center;">
+        <img src="{% static 'bnk2.jpeg' %}" style="height:70px;width:60px;float:left;">
+        <h5>{{i.title}}</h5>
+        <p style="text-align:justify;">{{i.content}}</p>
+        {{i.date}}
+ </div>
+
+    {% endfor %}
+
+</form>
+
+</body>
+</html>

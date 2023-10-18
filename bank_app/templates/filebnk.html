@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a{
+             background-color:   rgb(205, 137, 200);height:500px;width:800px;margin-left: 100px;position: fixed;
+             background-image:url{% static 'watcch.png' %}
+        }
+        #b{
+            background-color:  #2b5876 0%, #4e4376  51%, #2b5876  100%);height:350px;width:350px;padding: 20px,20px,20px,20px;
+
+
+
+        }
+        #c{background-color: #2b5876 0%, #4e4376  51%, #2b5876  100%);height:350px;width:350px;
+
+
+        }
+        #d{background-color: rgb(159, 205, 206);height:150px;width:150px;margin-left:940px;
+
+        }
+        .btn-grad {
+            background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+
+    </style>
+</head>
+<body style="background-color:rgb(21, 21, 21);">
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <div id="a" style="background-image:url({% static 'b1.jpeg' %});background-repeat: no-repeat;
+         background-size: cover;">
+
+        <div id="b" style="margin-left: 30px;margin-top:70px;">
+            <h3>Personal Details</h3>
+            <p><b>Firstname:{{a.fname}}</b></p>
+        <p><b>lastname:{{a.lname}}</b></p>
+        <p><b>Email:{{a.email}}</b></p>
+            <p><b>Username:{{a.uname}}</b></p>
+            <p><b>Phone no: {{a.phn}}</b></p>
+            <button class="btn-grad" style="height:50px;width:150px;margin-left: 60px;margin-top:40px;">
+                <a href="http://127.0.0.1:8000/bank_app/edit/{{a.id}}" style="color:white;font-family:'Times New Roman', Times, serif;">Edit</a></button>
+
+        </div>
+            <div id="c" style="margin-left: 400px;margin-top:-350px;">
+                 <button class="btn-grad" style="height:50px;width:150px;margin-left: 60px;margin-top:40px;"><a href="http://127.0.0.1:8000/bank_app/amountadd/{{a.id}}" style="color:white;font-family: 'Times New Roman', Times, serif;font-size:10px;">
+                     Add amount</a></button>
+                <button class="btn-grad" style="height:50px;width:150px;margin-left:60px;margin-top:40px;">
+                <a href="http://127.0.0.1:8000/bank_app/wdrawamount/{{a.id}}" style="color:white;font-family:'Times New Roman', Times, serif;font-size:10px;">Withdraw Amount</a></button>
+
+                 <button class="btn-grad" style="height:50px;width:150px;margin-left: 60px;margin-top:40px;">
+
+                <a href="http://127.0.0.1:8000/bank_app/check/{{a.id}}"style="color:white;font-family:'Times New Roman', Times, serif;font-size:10px;">Check Balance</a></button>
+
+            </div>
+
+    </div>
+    <div id="d">
+        <img src="{% static a.img %}" height="150px" width="150px">
+    </div>
+
+        <button class="btn-grad" style="margin-left:950px;"><a href="http://127.0.0.1:8000/bank_app/fileedit/{{a.id}}" style="color:white;font-family:'Times New Roman', Times, serif;">Edit</a></button><br><br>
+
+    <h4 style="margin-left:940px;color:white;">Username:{{a.uname}}</h4>
+        <h4 style="margin-left:940px;color:white;">Account No:<input type="number" name="acc_number" value="{{a.acc_number}}" style="background-color: rgb(174, 218, 102);"></h4>
+        <button class="btn-grad" style="margin-left:930px;"><a href="http://127.0.0.1:8000/bank_app/ministate/{{a.id}}" style="color:white;font-family:'Times New Roman', Times, serif;font-size:10px;">
+            Ministatement</a></button>
+               <button style="font-size:10px;background-color:rgba(45, 43, 90, 0.63);width:100px;height:30px;margin-left:950px;"><a href="http://127.0.0.1:8000/bank_app/dis/" style="color:white;">Display Newsfeed</a></button>
+                 <button class="btn-grad" style="margin-left:930px;"><a href="http://127.0.0.1:8000/bank_app/wishl/" style="color:white;font-family:'Times New Roman', Times, serif;font-size:10px;">
+            Wishlist</a></button>
+        <button style="margin-left:930px;background-color:rgba(45, 43, 90, 0.63);"><a href="http://127.0.0.1:8000/bank_app/logout/" style="color:red;">Logout</a></button>
+    </form>
+</body>
+</html>

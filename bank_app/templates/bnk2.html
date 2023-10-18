@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+
+         .btn-grad {
+            background-image: linear-gradient(to right, #F0C27B 0%, #4B1248  51%, #F0C27B  100%);
+<!--            margin: 10px;-->
+<!--            padding: 15px 45px;-->
+<!--            text-align: center;-->
+<!--            text-transform: uppercase;-->
+<!--            transition: 0.5s;-->
+<!--            background-size: 200% auto;-->
+<!--            color: white;-->
+<!--            box-shadow: 0 0 20px #eee;-->
+<!--            border-radius: 10px;-->
+<!--            display: block;-->
+<!--          }-->
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url({% static 'b5.jpeg' %});background-size:100%;  background-repeat: no-repeat;">
+
+    <table align="center" height="400px" width="60%">
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <h1 align="center">WELCOME NEW USER</h1>
+        <tr>
+            <td style="width:30%;"><input type="text" name="fname" placeholder="FIRST NAME" style=" height:30px;width:200px;margin-left:80px;"></td>
+            <td style="width:30%;"> <input type="text" name="lname" placeholder="LASTNAME" style=" width:200px;height:30px;"></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="uname" placeholder="USERNAME" style=" width:200px;margin-left:80px;height:30px;"></td>
+            <td><input type="email" name="email" placeholder="xx@gmail.com" style=" width:200px;height:30px;"></td>
+        </tr>
+        <tr>
+            <td><input type="number" name="phn" placeholder="xxxxxxxxxx" style=" width:200px;margin-left:80px;height:30px;"></td>
+            <td><input type="file" name="img" style=" width:200px;height:30px;"></td>
+        </tr>
+        <tr>
+            <td><input type="password" name="psw" placeholder="xxx" style=" width:200px;margin-left:80px;height:30px;"></td>
+            <td><input type="password" name="cpsw" placeholder="xxx" style=" width:200px;height:30px;"></td>
+        </tr>
+        <th colspan="2">
+            <button class="btn-grad" style="width:100px;margin-left:-40px;background-color:darkgoldenrod;font-size:15px;">submit</button>
+        </th>
+        </form>
+    </table>
+
+
+</body>
+</html>

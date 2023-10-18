@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div height="400px" style="background-color: rgb(174, 218, 102);width:300px;height:350px;margin-left:500px;">
+<h1 align="center"><i>Edit image</i></h1>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <img src="{% static img %}" height="150px" width="150px" style="margin-left:75px;"><br>
+    <input type="file" name="img" style="margin-left:75px;"><br><br>
+    <label>Username</label>:
+    <input type="text" name="uname" value="{{a.uname}}"><br><br>
+        <input type="submit" value="update"  style="border-radius:10px;height:30px;width:60px;background-color:rgb(169, 97, 237);margin-left:120px;">
+
+</form>
+</div>
+</body>
+</html>

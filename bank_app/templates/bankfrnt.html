@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+<!--    <script src="https://kit.fontawesome.com/4456ec25b8.js" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"-->
+<!--    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"-->
+<!--    crossorigin="anonymous"></script>-->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a{
+            height:60px;
+            width:700px;
+            border-color: rgb(169, 21, 21);
+            margin-left: 250px;
+            margin-top:100px;
+
+        }
+        #b{
+            height:60px;
+            width:500px;
+            border-color: rgb(169, 21, 21);
+            margin-left: 350px;
+            margin-top:30px;
+
+        }
+        #c{
+            height:60px;
+            width:500px;
+            border-color: rgb(169, 21, 21);
+            margin-left: 350px;
+            margin-top:30px;
+
+        }
+        #d{
+            height:60px;
+            width:200px;
+            margin-left: 470px;
+            margin-top:30px;
+
+            border-start-start-radius: 40px;
+            border-start-end-radius: 40px;
+            border-end-start-radius: 40px;
+            border-end-end-radius: 40px;
+
+
+
+        }
+        body{
+            background-color: rgb(10, 96, 176);
+        }
+    </style>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+    <div id="a" class="container" style="border: solid 2px;">
+      <h2 align="center" style="color:white;">WELCOME TO BANK</h1>
+
+    </div>
+    <div id="b" class="container" style="border: solid 2px;" >
+        <h3 align="center" style="color:white;">ENTER YOUR NAME<input type="text" name="fname"  style=" background-color: rgb(10, 96, 176);margin-left:50px;color:white;">
+</h3>
+
+
+    </div>
+    <div id="c" class="container" style="border: solid 2px;">
+        <h3 align="center" style="color:white;">4 DIGITPIN <input type="password" name="psw" style=" background-color: rgb(10, 96, 176);margin-left:130px;color:white;"></h3>
+
+
+    </div>
+    <button id="d" type="button" value="update"   style=" background-color: rgb(10, 96, 176);font-size:20px;" >SUBMIT</button>
+
+
+</form>
+</body>
+</html>

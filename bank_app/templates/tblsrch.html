@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <script>
+    function myFunction(){
+     var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('div');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("th")[0]; #used for getting the value without the list
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+    }
+  </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="search  by title..">-->
+<!--<form method="post">{% csrf_token %}-->
+<!--    <div id="myUL">-->
+<!--    {% for i in a %}-->
+<!--    <table border="2" style="height:150px;width:350px;background-color: rgb(245, 243, 241);border-style: solid;border-color:grey;align:center;">-->
+<!--        <img src="{% static 'bnk2.jpeg' %}" style="height:70px;width:60px;float:left;">-->
+<!--        <th>{{i.title}}</th>-->
+<!--        <td style="text-align:justify;">{{i.content}}</td>-->
+<!--        {{i.date}}-->
+<!--       <i class="fa fa-thumbs-up" aria-hidden="true" style="margin-left:200px;" ></i>-->
+<!--        <i class="fa-sharp fa-regular fa-bookmark" ></i>-->
+<!--    </table>-->
+
+<!--    {% endfor %}-->
+<!--    </div>-->
+
+  <table>
+    <tr>
+      <th>title</th>
+      <td><input type="text" name="title"></td></tr>
+    <tr>
+      <th>content</th>
+      <td><input type="number" name="content"></td></tr>
+    <tr>
+      <th>
+        <button type="submit">submit</button>
+      </th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

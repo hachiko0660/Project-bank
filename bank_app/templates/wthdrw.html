@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image:url({% static 'b6.jpeg' %});background-repeat: no-repeat;
+         background-size:100%;">
+<form method="post" >{% csrf_token %}
+<!-- rgb(159, 205, 206)-->
+    <div style="background-color:rgb(181, 213, 213);width:400px;height:50px;margin-left:370px;">
+        <h3 style="margin-top:50px;margin-left:130px;margin-top:30px;">Withdraw Amount</h3></div>
+    <div id="a" style="height:100px; width:400px;margin-top:20px;background-color:rgb(181, 213, 213);margin-left:370px;">
+       <h4>Enter amount to withdraw</h4>
+        <input type="number" name="amount1" style="height:30px; width:390px;
+        background-color: rgb(159, 205, 206);" placeholder="Enter amount to withdraw">
+    </div>
+    <div id="b" style="height:100px; width:400px;background-color:rgb(181, 213, 213);;margin-top:40px;
+    margin-left:370px;">
+        <h4>4 Digit PIN</h4>
+        <input type="password" name="psw1" style="height:30px; width:390px;background-color: rgb(159, 205, 206);"
+               placeholder="4 Digit pin">
+    </div>
+<button style="width:600px;background-color: rgb(159, 205, 206);width:100px;margin-top:30px;
+margin-left:510px;">withdraw amount</button>
+</form>
+
+</body>
+</html>

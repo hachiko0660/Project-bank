@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+          body{
+            background-color:#D9AFD9;
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);background-repeat:no-repeat;background-size:100% 300px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" style="align-content:center; height:500px width=400px; text-align: center;background-color:pink;
+font-family: 'Times New Roman', Times, serif;id=tb1 margin-left: 300px;border-collapse: collapse;
+            border:5px solid red;margin-top:100px;margin-left:350px;">
+
+    <tr style="background-color:goldenrod;">
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>email</th>
+        <th>phn</th>
+        <th>edit</th>
+
+    </tr>
+    {% for i,j,k,l,m,n in a %}
+    <tr>
+        <td>{{i}}</td>
+        <td>{{j}}</td>
+        <td>{{k}}</td>
+        <td>{{l}}</td>
+        <td>{{m}}</td>
+    </tr>
+    <td> <a href="http://127.0.0.1:8000/bank_app/profile/edit/{{m}}"> <button class="button" style="border-radius:20px;background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff  51%, #ff6e7f  100%);">Edit</button></a></td>
+
+    {% endfor %}
+</table>
+
+</body>
+</html>

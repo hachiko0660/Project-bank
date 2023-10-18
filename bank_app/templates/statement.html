@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color:rgb(110, 179, 188);
+background-image: linear-gradient(90deg, transparent 50%,
+  rgba(255,255,255,.5) 50% 50%);
+background-size: 25px 25px; }
+div{background-color:rgb(110, 179, 188);
+background-image: linear-gradient(90deg, transparent 50%,
+  rgba(255,255,255,.5) 50% 50%);
+background-size: 25px 25px; }
+
+
+    </style>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+    <div align="center" style="height:80px;width:600px;background-color:rgb(110, 179, 188);border-color:black;border-style: solid;margin-left:300px;margin-top:50px;">
+    <h3 style="text-align: center;margin-top:30px;color:rgb(46, 16, 16);margin-top:30px;text-decoration:overline;font-size:20px;">SHOW MINI STATEMENT</h3>
+    </div><br>
+    <div style="height:50px;width:400px;margin-top:10px;margin-left:300px;border-color:rgb(87, 3, 37);border-style: solid">
+        <input type="password" name="psw1" placeholder="****" style="margin-top:10px; margin-left:120px;background-color: rgb(165, 156, 165);">
+        </div><br>
+        <div style="height:50px;width:300px;margin-left:300px;border-color:black;border-style: solid">
+            <label style="margin-top:10px;color:rgb(46, 16, 16);"><b>Choose Option</b></label>
+              <select name="select">
+                  <option>choose</option>
+            <option value="deposit">Deposit</option>
+                  <option value="withdraw">Withdraw</option></select>
+
+        </div><br>
+        <div style="height:50px;width:200px;margin-left:300px;border-color:rgb(87, 3, 37);border-style: solid">
+              <button  style="margin-top:10px; margin-left:20px;background-color: rgb(165, 156, 165);color:black;">Generate Statement</button>
+        </div>
+</form>
+</body>
+</html>
+
