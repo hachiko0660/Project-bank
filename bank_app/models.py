@@ -1,10 +1,6 @@
 from django.db import models
 
-# Create your models here.
 
-# class bankmodel(models.Model):
-#     name=models.CharField(max_length=30)
-#     pin=models.CharField(max_length=20)
 
 
 class bnkm(models.Model):
@@ -16,7 +12,7 @@ class bnkm(models.Model):
     img=models.FileField()
     psw=models.CharField(max_length=20)
     balance=models.IntegerField()
-    acc_number=models.IntegerField()        #this create a field for creating account wth deafualt value=0 in register
+    acc_number=models.IntegerField()      
     def __str__(self):
         return self.uname
 
@@ -34,13 +30,6 @@ class widamount(models.Model):
     def __str__(self):
         return self.uid
 
-
-# class minstatement(models.Model):
-#     choice=[('withdraw','withdraw'),
-#             ('deposit','deposit'),
-#             ('all','all')
-#             ]
-#     select=models.IntegerField(choices=choice)
 
 
 class newsm(models.Model):
