@@ -8,8 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.core.mail import send_mail
 from django.contrib.auth import logout
-# user model is a bydefualt django model which is used for authentication.
-# fields of user models are username firstname lastname email password
+
 
 
 def bnkfun(request):
@@ -52,7 +51,7 @@ def banknew(request):
             b = bnkm.objects.all()
             for i in b:
                 if i.fname == fn and i.psw == ps:
-                    request.session['id']=i.id          #this is used for accesing id globaly
+                    request.session['id']=i.id          
                     return redirect(profile)
                     return HttpResponse('login success')
             else:
@@ -103,19 +102,6 @@ def fileedit(request,id):
         return redirect(profile)
     return render(request,'imgedit.html',{'a':a,'img':img})
 
-
-# def imaged(request, id):
-#     a = bnkm.objects.get(id=id)
-#     img = str(a.img).split('/')[-1]
-#     if request.method == 'POST':
-#
-#         if request.FILES.get('img') == None:
-#             a.save()
-#         else:
-#             a.img =request.FILES['img']
-#         a.save()
-#         return redirect(profile)
-#     return render(request, 'imgedit.html', {'a': a, 'img': img})
 
 
 
@@ -276,23 +262,7 @@ def wishl(request):
     id=request.session['id']
     return render(request,'wsh list.html',{'a':a,'id':id})
 
-# def adminlog(request):
-#     if request.method=='POST':
-#         a=adminf(request.POST)
-#         if a.is_valid():
-#             em=a.cleaned_data['email']
-#             us=a.cleaned_data['username']
-#             b=User.objects.all()
-#             for i in b:
-#                 if em==i.email and us==i.username:
-#                     return redirect(adminpro)
-#                     return HttpResponse("admin logged")
-#             else:
-#                 return HttpResponse("login failed")
-#
-#     return render(request,'adminlogin.html')
-##### \\use authentication method for accessing password\\
-##  authentication function that checks credentials against the authentication  backend and return it.
+
 def adminlog(request):
     if request.method=='POST':
         a=adminf(request.POST)
